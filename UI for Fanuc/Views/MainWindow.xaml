@@ -1,0 +1,56 @@
+﻿<Window x:Class="UI_for_Fanuc.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local= "clr-namespace:UI_for_Fanuc"
+        xmlns:vm="clr-namespace:UI_for_Fanuc.ViewModels"
+        mc:Ignorable="d"
+        Title="Grafičko korisničko sučelje za upravljanje FANUC Robot M-10iA " Height="774.4" Width="1200">
+
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <TextBox x:Name="TextBoxA1" HorizontalAlignment="Left" Height="27" Margin="387,217,0,0" TextWrapping="Wrap" Text="A1" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TextBoxA2" HorizontalAlignment="Left" Height="27" Margin="387,286,0,0" TextWrapping="Wrap" Text="A2" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TextBoxA3" HorizontalAlignment="Left" Height="27" Margin="387,355,0,0" TextWrapping="Wrap" Text="A3" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TextBoxA4" HorizontalAlignment="Left" Height="27" Margin="387,422,0,0" TextWrapping="Wrap" Text="A4" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TextBoxA5" HorizontalAlignment="Left" Height="27" Margin="387,487,0,0" TextWrapping="Wrap" Text="A5" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TextBoxA6" HorizontalAlignment="Left" Height="27" Margin="387,560,0,0" TextWrapping="Wrap" Text="A6" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <Button Content="Start" HorizontalAlignment="Left" Height="42" Margin="908,16,0,0" VerticalAlignment="Top" Width="191" FontSize="22" Command="{Binding StartCommand, Mode=OneWay}" Background="#FF3FE016"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Height="42" Margin="908,72,0,0" VerticalAlignment="Top" Width="191" FontSize="22" Command="{Binding StopCommand, Mode=OneWay}" Background="#FFF10808"/>
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="27" Margin="959,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA1, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox2" HorizontalAlignment="Left" Height="27" Margin="959,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA2, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox3" HorizontalAlignment="Left" Height="27" Margin="959,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA3, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox4" HorizontalAlignment="Left" Height="27" Margin="959,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA4, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox5" HorizontalAlignment="Left" Height="27" Margin="959,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA5, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox6" HorizontalAlignment="Left" Height="27" Margin="959,560,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Text="{Binding JogA6, StringFormat=\{0:F\}}"/>
+        <TextBox x:Name="TextBox7" HorizontalAlignment="Left" Height="26" Margin="383,14,0,0" TextWrapping="Wrap" Text="Ip address" VerticalAlignment="Top" Width="124" VerticalContentAlignment="Center" FontSize="16" BorderBrush="#FFF7F8FB" />
+        <TextBox x:Name="TextBox8" HorizontalAlignment="Left" Height="26" Margin="383,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" VerticalContentAlignment="Center" FontSize="16" Text="{Binding IpAddress}" />
+        <Button Content="Connect" HorizontalAlignment="Left" Height="26" Margin="544,16,0,0" VerticalAlignment="Top" Width="150" Command="{Binding ConnectCommand, Mode=OneWay}"  />
+        <Button Content="Disconnect" HorizontalAlignment="Left" Height="26" Margin="544,56,0,0" VerticalAlignment="Top" Width="150" Command="{Binding DisconnectCommand, Mode=OneWay}"/>
+        <Button x:Name="Button1MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,217,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA1Command, Mode=OneWay}"/>
+        <Button x:Name="Button1PLUS" Content="PLUS" HorizontalAlignment="Left" Height="29" Margin="717,215,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA1Command, Mode=OneWay}"/>
+        <Button x:Name="Button2MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,286,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA2Command, Mode=OneWay}"/>
+        <Button x:Name="Button2PLUS" Content="PLUS" HorizontalAlignment="Left" Height="27" Margin="717,286,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA2Command, Mode=OneWay}"/>
+        <Button x:Name="Button3MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,355,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA3Command, Mode=OneWay}"/>
+        <Button x:Name="Button3PLUS" Content="PLUS" HorizontalAlignment="Left" Height="27" Margin="717,355,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA3Command, Mode=OneWay}"/>
+        <Button x:Name="Button4MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,422,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA4Command, Mode=OneWay}"/>
+        <Button x:Name="Button4PLUS" Content="PLUS" HorizontalAlignment="Left" Height="27" Margin="717,422,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA4Command, Mode=OneWay}"/>
+        <Button x:Name="Button5MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,487,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA5Command, Mode=OneWay}"/>
+        <Button x:Name="Button5PLUS" Content="PLUS" HorizontalAlignment="Left" Height="27" Margin="717,487,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA5Command, Mode=OneWay}"/>
+        <Button x:Name="Button6MINUS" Content="MINUS" HorizontalAlignment="Left" Height="27" Margin="508,560,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding MinusA6Command, Mode=OneWay}"/>
+        <Button x:Name="Button6PLUS" Content="PLUS" HorizontalAlignment="Left" Height="27" Margin="717,560,0,0" VerticalAlignment="Top" Width="156"  Command="{Binding PlusA6Command, Mode=OneWay}"/>
+        <StatusBar HorizontalAlignment="Left" Height="46" Margin="2,699,-0.4,-0.2" VerticalAlignment="Top" Width="1192">
+            <TextBlock Height="46" TextWrapping="Wrap" Text="{Binding ConnectionState, StringFormat=Connection state: {0}}" Width="524" FontSize="24"/>
+            <TextBlock Height="46" TextWrapping="Wrap" Text="{Binding ScanTime, StringFormat=ScanTime: {0}}" Width="576" FontSize="24"/>
+        </StatusBar>
+        <TextBox Height="57" Margin="894,155,0,0" TextWrapping="Wrap" Text="Trenutne vrijednosti zglobova" VerticalAlignment="Top" Width="220" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" BorderBrush="White" />
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="372,156,0,0" TextWrapping="Wrap" Text="Broj zgloba" VerticalAlignment="Top" Width="108" BorderBrush="White" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="60" Margin="532,143,0,0" TextWrapping="Wrap" Text="Smanjivanje vrijednosti" VerticalAlignment="Top" Width="115" FontSize="20" BorderBrush="#FFFCFDFF"/>
+        <TextBox HorizontalAlignment="Left" Height="60" Margin="733,143,0,0" TextWrapping="Wrap" Text="Povećavanje vrijednosti" VerticalAlignment="Top" Width="156" FontSize="20" BorderBrush="White" />
+        <Image HorizontalAlignment="Left" Height="571" Margin="30,16,0,0" VerticalAlignment="Top" Width="337" Source="/UI for Fanuc;component/slika robota.jpg"/>
+    </Grid>
+</Window>
